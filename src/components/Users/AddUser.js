@@ -53,14 +53,18 @@ const AddUser = (props) => {
     setEnteredAge(event.target.value);
   };
 
-  const errorHandler = () =>{
-      setError(null);
-  }
+  const errorHandler = () => {
+    setError(null);
+  };
 
   return (
-    <>
+    <React.Fragment>
       {error && (
-        <ErrorModal onClick={errorHandler} title={error.title} message={error.message}></ErrorModal>
+        <ErrorModal
+          onClick={errorHandler}
+          title={error.title}
+          message={error.message}
+        ></ErrorModal>
       )}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
@@ -83,7 +87,7 @@ const AddUser = (props) => {
           </Button>
         </form>
       </Card>
-    </>
+    </React.Fragment>
   );
 };
 
